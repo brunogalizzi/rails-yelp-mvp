@@ -1,0 +1,21 @@
+<body>
+
+<nav class="navbar navbar-light bg-light">
+  <a href="/restaurants" class="navbar-brand">Restaurants</a>
+  <a href="/restaurants/new" class="navbar-brand">New Restaurant</a>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+
+
+        <h1>New Review</h1>
+
+<%= render "form", review: [@restaurant, @review] %>
+<br>
+<a href="/restaurants/<%= @restaurant.id %>">Back</a>
+
+      </div>
+    </div>
+  </div>

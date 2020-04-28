@@ -1,0 +1,48 @@
+<body>
+
+<nav class="navbar navbar-light bg-light">
+  <a href="/restaurants" class="navbar-brand">Restaurants</a>
+  <a href="/restaurants/new" class="navbar-brand">New Restaurant</a>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+
+
+
+<restaurant>
+  <h1>
+    <%= @restaurant.name %> - <%= @restaurant.category %>
+    <small>
+      <a href="/restaurants/<%= @restaurant.id %>/reviews/new" style="text-decoration: none">
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbspReview</a>
+      <a href="/restaurants" style="text-decoration: none">Back</a>
+    </small>
+  </h1>
+  <p style="font-style:italic;"><%= @restaurant.address %>&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp&nbsp&nbsp
+    <%= @restaurant.phone_number %></p>
+  <hr>
+</restaurant>
+
+  <% @ratings.each_with_index do |rating, index|%>
+      <h2><%= '⭐️'*rating.to_i %></h2>
+      <p><%= @contents[index] %></p>
+      <br>
+  <% end %>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
